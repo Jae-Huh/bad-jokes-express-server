@@ -9,4 +9,6 @@ app.listen(PORT, function () {
   console.log('The server is listening on port', PORT)
 })
 
-app.get('/', routes.hello)
+app.use(express.static('public'))
+
+app.get('/', routes.addJokes)

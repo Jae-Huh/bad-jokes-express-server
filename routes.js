@@ -1,9 +1,9 @@
 const path = require('path')
 
-function hello (req, res) {
-  res.send('HELLO!')
+function addJokes (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'add-jokes.html'))
 }
 
 module.exports = {
-  hello
+  addJokes
 }
