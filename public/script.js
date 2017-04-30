@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', randomJoke)
 
 // const url = 'http://localhost:3000/joke-api'
-const url = 'https://bad-jokes-express-server-pfjpfqugjl.now.sh/joke-api'
+const url = '/joke-api'
 
 function randomJoke () {
   fetch(url)
