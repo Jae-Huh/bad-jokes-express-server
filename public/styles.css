@@ -50,6 +50,7 @@ p {
 .submit-btn:hover {
   color: #FAF5D0;
   background-color: #7F7B7C;
+  cursor: pointer;
 }
 
 .submit-btn:focus {
