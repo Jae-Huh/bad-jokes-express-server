@@ -1,3 +1,4 @@
+// Both path and fs are built in
 const path = require('path')
 const fs = require('fs')
 
@@ -9,23 +10,28 @@ function typeJokes (req, res) {
 }
 
 function addJokes (req, res) {
-  updateJokesJson(req.body)
+  UpdateJokesJson(req.body)
 
   const collection = {}
   const question = req.body.question
   const answer = req.body.answer
   collection.question = question
   collection.answer = answer
-  
+
   res.send(jokes)
 }
 
-function updateJokesJson(newJoke) {
+function randomJoke (req, res) {
+  res.json(jokes[Math.floor(Math.random() * jokes.length)])
+}
+
+function UpdateJokesJson(newJoke) {
   jokes.push(newJoke)
   fs.writeFileSync('./jokes.json', JSON.stringify(jokes))
 }
 
 module.exports = {
   typeJokes,
-  addJokes
+  addJokes,
+  randomJoke
 }

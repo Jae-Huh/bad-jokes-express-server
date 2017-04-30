@@ -17,4 +17,5 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', routes.typeJokes)
-app.post('/addJokes', routes.addJokes)
+app.post('/add-jokes', routes.addJokes)
+app.get('/random-joke', routes.randomJoke)
