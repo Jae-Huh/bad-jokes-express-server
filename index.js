@@ -18,4 +18,5 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', routes.typeJokes)
 app.post('/add-jokes', routes.addJokes)
+app.get('/joke-api', routes.jokeApi)
 app.get('/random-joke', routes.randomJoke)

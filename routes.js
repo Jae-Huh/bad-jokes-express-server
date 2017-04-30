@@ -21,8 +21,12 @@ function addJokes (req, res) {
   res.send(jokes)
 }
 
-function randomJoke (req, res) {
+function jokeApi (req, res) {
   res.json(jokes[Math.floor(Math.random() * jokes.length)])
+}
+
+function randomJoke (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'random-joke.html'))
 }
 
 function UpdateJokesJson(newJoke) {
@@ -33,5 +37,6 @@ function UpdateJokesJson(newJoke) {
 module.exports = {
   typeJokes,
   addJokes,
+  jokeApi,
   randomJoke
 }
